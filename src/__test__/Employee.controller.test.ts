@@ -1,6 +1,7 @@
 import request from 'supertest';
 import mongoose from 'mongoose'
 import app from '../app';
+import { afterAll, afterEach, beforeAll, describe, expect, it } from "@jest/globals";
 
 beforeAll(async()=>{
     await mongoose.connect('mongodb://localhost:27017/NodeJS_30_10_2025')
