@@ -1,15 +1,15 @@
 import express from "express";
 import { employee_router } from "./routes/Employee.route";
+import { customer_router } from "./routes/Customer.route";
 import { connectDB } from "./config/dbConnect";
 
-//Create Express App
-const app=express();
-//Middleware to parse JSON request bodies
-app.use(express.json());
-//Applay Employee Router
-app.use('/employee',employee_router)
-//Establish Connection
-connectDB()
+const app = express();
 
+app.use(express.json());
+
+app.use('/employee', employee_router);
+app.use('/api/customers', customer_router);
+
+connectDB();
 
 export default app;
